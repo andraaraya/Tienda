@@ -1,0 +1,61 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 31 may. 2022, 18:32:21
+    Author     : Andra Mckenzie Araya
+*/
+/*
+box-sizing: define el tamaño de nuestros contenedores, segun las medidas del border, margín, contebte y padding
+content-box: toma en cuenta, contenido, borde y padding para calculo de la caja sumativa.
+border-box: modifica valores de contenido. para que coincida con nuestro ancho y alto
+position es otra propiedad que nos permite desplazae o mover nuestros contenedores
+
+static
+relative
+absolute
+fixed
+sticky
+*/
+
+.block{
+    background-color: purple;
+    width:200px;
+    height: 200px;
+    padding: 20px;
+    border: 20px solid blue;
+    box-sizing:border-box;
+
+}
+
+.static{
+    position:static;
+    border:3px solid pink;
+    top:400px;
+    left:50px;
+}
+
+.relative{
+    position:relative;
+    border:3px solid pink;
+    top:400px;
+    left:50px;
+    width: 400px;
+    height: 450px
+}
+
+.fixed{
+    position:fixed;
+    border:3px solid pink;
+    top:150px;
+    left:50px;
+}
+.absolute{
+    position:absolute;
+    border:3px solid pink;
+    top: 60px;
+    left: 50px;
+    width: 400px;
+    height: 100px;
+}
