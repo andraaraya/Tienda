@@ -15,7 +15,7 @@ import javax.persistence.Id;
  * @author Andra Mckenzie Araya
  */
 @Entity
-@Table(name = "pais")
+@Table(name = "paises")
 public class Pais implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

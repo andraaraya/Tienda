@@ -11,7 +11,6 @@ import java.util.List;
  */
 public interface IPersonasService {
     public List<personas> getAllpersonas();
-    public personas findByNombre (String nombre);
     public personas getpersonasById (long id);
     public void savepersonas(personas personas);
     public void delete (long id);
