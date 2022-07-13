@@ -38,14 +38,14 @@ public class PersonaController {
         "Tabla Persona" */
         model.addAttribute("personas", listaPersona);/*donde en el html encuentre "personas" lo va a sustituir por 
         listaPersona (line 26) */
-        return "persona";//devolvera html persona
+        return "personas";//devolvera html persona
     }
 
     //Metodo que crear una nueva persona
     @GetMapping("/personaN")//cuando se usa ese url pasa lo de abajo
     public String crearPersona(Model model) {//model permite pasar informacion a un html
         List<Pais> listaPaises = paisService.listCountry();//pasamos toda la lista pais al html
-        model.addAttribute("persona", new personas());//creamos un objeto nuevo tipo persona para poder crear la fila
+        model.addAttribute("personas", new personas());//creamos un objeto nuevo tipo persona para poder crear la fila
         model.addAttribute("paises", listaPaises);/*donde en el html encuentre "paises" lo va a sustituir por 
         listaPaises (line 41) esto para poder hacer el dropdowm*/
         return "crear";//devolvera html crear
@@ -55,7 +55,7 @@ public class PersonaController {
     @PostMapping("/save")//cuando se usa ese url pasa lo de abajo
     public String guardarPersona(@ModelAttribute personas persona) {//enviar informacion a mi metodo 
         personaService.savepersonas(persona);//asi lo guardo en la base de datos
-        return "redirect:/persona";//redirige a persona
+        return "redirect:/personas";//redirige a persona
     }
 
     //Metodo que edita
