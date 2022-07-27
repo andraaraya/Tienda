@@ -34,21 +34,21 @@ public class Userprincipal implements UserDetails {
         });
 // Extract list of roles (ROLE name)
         this.persona.getRoleList().forEach(r -> {
-GrantedAuthority authority = new SimpleGrantedAuthority ("ROLE_" + r);
-authorities.add (authority);
-        }); 
-return authorities;     
-        }
+            GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + r);
+            authorities.add(authority);
+        });
+        return authorities;
+    }
 
     @Override
 
     public String getPassword() {
-        return this.persona.getNombre();
+        return this.persona.getPassword();
     }
 
     @Override
     public String getUsername() {
-return this.persona.getNombre();
+        return this.persona.getNombre();
     }
 
     @Override

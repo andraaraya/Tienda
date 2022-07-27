@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        daoAuthenticationProvider.setUserDetailsService(userDetailsService());
+        daoAuthenticationProvider.setUserDetailsService(getUserService());
         return daoAuthenticationProvider;
     }
 
@@ -64,14 +64,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/persona", "/login")
+                .antMatchers("/personas", "/login")
                 .hasRole("ADMIN")
-                .antMatchers("/personasN", "/persona", "/", "/login")
+                .antMatchers("/personaN", "/persona", "/", "/login")
                 .hasAnyRole("USER", "VENDEDOR", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll().defaultSuccessUrl("/persona", true);
+                .loginPage("/login").permitAll().defaultSuccessUrl("/personas", true);
     }
 
 }
