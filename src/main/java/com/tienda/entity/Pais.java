@@ -20,8 +20,16 @@ public class Pais implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 private long id;
+private String pais;
 private String nombre;
 
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
     public long getId() {
         return id;
     }

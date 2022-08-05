@@ -31,7 +31,7 @@ public class PersonaController {
     private IPaisService paisService;
 
     //Metodo que arrastra los datos de base de datos al htnml
-    @GetMapping("/persona")//cuando se usa ese url pasa lo de abajo
+    @GetMapping("/personas")//cuando se usa ese url pasa lo de abajo
     public String index(Model model) {//model permite pasar informacion a un html
         List<personas> listaPersona = personaService.getAllpersonas();//pasamos toda la lista personas al html
         model.addAttribute("titulo", "Tabla Personas");/*donde en el html encuentre "titulo" lo va a sustituir por 
